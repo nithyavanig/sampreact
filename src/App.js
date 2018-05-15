@@ -4,6 +4,11 @@ import './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'; 
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import styled from 'styled-components';
+
+const alignstyle = styled.div`
+ text-align: left;
+`;
 
 class App extends Component {
   constructor(props) {
@@ -22,9 +27,7 @@ class App extends Component {
         <img src={logo} className="App-logo" alt="logo" />
         <h2>Sample Appli</h2>
       </div>
-      <div className="App-intro">
-          <div><label>Name</label></div>
-          <div>
+      <div className="App-intro">    
           <TextField
               style={{ 'width': '20%' }}
               hintText="Name"
@@ -36,13 +39,14 @@ class App extends Component {
           <br/>
       </div>
       <div>
+        <alignstyle>
         <RaisedButton 
                 label="Submit" 
                 color="secondary" 
                 lableStyle={{float: 'left'}} 
                 onClick={this.handleSubmit} 
         />
-      </div>
+        </alignstyle>
       </div>
     </div>
     </MuiThemeProvider>
