@@ -22,11 +22,12 @@ class App extends Component {
   render() {
     return (
     <MuiThemeProvider>
-    <div className="App">
+    <div className="App">    
       <div className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h2>Sample Appli</h2>
       </div>
+      <div className="container_login">
       <div className="App-intro">    
           <TextField
               style={{ 'width': '20%' }}
@@ -47,7 +48,8 @@ class App extends Component {
                 onClick={this.handleSubmit} 
         />
         </alignstyle>
-      </div>
+      </div>  
+    </div>
     </div>
     </MuiThemeProvider>
     );

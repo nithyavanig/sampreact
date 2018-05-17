@@ -20,7 +20,17 @@
 
 .App-intro {
   font-size: large;
+} 
+
+.container_login{
+  width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top:80px;    
+  height: 200px;
+  background: rgb(195, 214, 214);
 }
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
