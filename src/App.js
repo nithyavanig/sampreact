@@ -6,8 +6,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import styled from 'styled-components';
 
-const alignstyle = styled.div`
- text-align: left;
+const Alignstyle = styled.div`
+ text-align: center;
 `;
 
 class App extends Component {
@@ -22,34 +22,44 @@ class App extends Component {
   render() {
     return (
     <MuiThemeProvider>
-    <div className="App">    
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Sample Appli</h2>
-      </div>
+    <div className="App">     
       <div className="container_login">
-      <div className="App-intro">    
+      <h2 style={{textAlign:"center",fontWeight:"bold"}}>Ineve Creations</h2>
+      <h4 style={{textAlign:"center",fontWeight:"bold"}}>Login</h4>
+      <div className="App-intro">
+          <div>    
           <TextField
-              style={{ 'width': '20%' }}
+              style={{ 'width': '50%' }}
               hintText="Name"
               floatingLabelText="Your Name"              
               name="Name1"
               onChange={this.handleTextChange}
               value={this.state.name}                            
           />
-          <br/>
+          </div>
+          <div></div>
+          <div>
+          <TextField 
+              style={{ 'width': '50%' }}
+              ref='password'
+              hintText="Password"
+              floatingLabelText="Password"
+              type="password" 
+          />
+          </div>         
       </div>
       <div>
-        <alignstyle>
+        <Alignstyle>
         <RaisedButton 
-                label="Submit" 
+                style={{ 'width': '50%' }}
+                label="Login" 
                 color="secondary" 
-                lableStyle={{float: 'left'}} 
+                lableStyle={{float: 'center'}} 
                 onClick={this.handleSubmit} 
         />
-        </alignstyle>
-      </div>  
-    </div>
+        </Alignstyle>
+      </div>
+    </div>  
     </div>
     </MuiThemeProvider>
     );
