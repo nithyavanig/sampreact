@@ -32,6 +32,10 @@
   border: 1px solid #d9d9d9;
 }
 
+.ErrorMsg{
+  font-size: 1.2rem ;
+  color: #FF4081 ;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

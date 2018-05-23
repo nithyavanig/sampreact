@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'; 
 import RaisedButton from 'material-ui/RaisedButton';
@@ -14,7 +13,9 @@ class App extends Component {
   constructor(props) {
     super(props);    
     this.state = {
-       name: 'Hello'
+       name: 'Hello',
+       nameError:'',
+       passError:'' 
     }
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleSubmit=this.handleSubmit.bind(this);
@@ -34,27 +35,28 @@ class App extends Component {
               floatingLabelText="Your Name"              
               name="Name1"
               onChange={this.handleTextChange}
-              value={this.state.name}                            
+              value={this.state.name}
+              ref={(input) => { this.uname = input; }}                          
           />
           </div>
-          <div></div>
+          <div className="ErrorMsg">{this.state.nameError}</div>
           <div>
           <TextField 
               style={{ 'width': '50%' }}
-              ref='password'
+              ref={(input) => { this.password = input; }}
               hintText="Password"
               floatingLabelText="Password"
               type="password" 
           />
-          </div>         
+          </div>
+          <div className="ErrorMsg">{this.state.passError}</div>         
       </div>
       <div>
         <Alignstyle>
         <RaisedButton 
                 style={{ 'width': '50%' }}
                 label="Login" 
-                color="secondary" 
-                lableStyle={{float: 'center'}} 
+                color="secondary"                 
                 onClick={this.handleSubmit} 
         />
         </Alignstyle>
@@ -68,8 +70,15 @@ class App extends Component {
     this.setState({name: event.target.value})
   }
   handleSubmit(event) {
-    alert('Welcome ..' + this.state.name);
-    event.preventDefault();
+   const pass=this.password.value;
+   const uname=this.uname.value;
+   if(uname ==""){
+     this.setState({"nameError":"User Name is required"});
+   }
+   if(pass==''){
+    this.setState({"passError":"Password is required"});
+   }
+   event.preventDefault();
   }
 }
 
