@@ -4,6 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import styled from 'styled-components';
+import './Constants/url.js';
 
 const Alignstyle = styled.div`
  text-align: center;
@@ -15,12 +16,16 @@ class App extends Component {
     this.state = {
        name: 'Hello',
        nameError:'',
-       passError:'' 
+       passError:'' ,
+       authSuccess:false
     }
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleSubmit=this.handleSubmit.bind(this);
   };
   render() {
+    if(this.state.authSuccess){
+      return <Redirect to='/dashboard' />;
+    }
     return (
     <MuiThemeProvider>
     <div className="App">     
@@ -75,8 +80,11 @@ class App extends Component {
    if(uname ==""){
      this.setState({"nameError":"User Name is required"});
    }
-   if(pass==''){
+   else if(pass==''){
     this.setState({"passError":"Password is required"});
+   }
+   else{
+    this.state.authSuccess=true;
    }
    event.preventDefault();
   }
