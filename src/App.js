@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import styled from 'styled-components';
 import './Constants/url.js';
+import {Redirect} from 'react-router-dom';
 
 const Alignstyle = styled.div`
  text-align: center;
