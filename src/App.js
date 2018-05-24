@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import styled from 'styled-components';
 import './Constants/url.js';
-import {Redirect} from 'react-router-dom';
+//import {Redirect} from 'react-router-dom';
 
 const Alignstyle = styled.div`
  text-align: center;
@@ -24,9 +24,9 @@ class App extends Component {
     this.handleSubmit=this.handleSubmit.bind(this);
   };
   render() {
-    if(this.state.authSuccess){
+    /* if(this.state.authSuccess){
       return <Redirect to='/dashboard' />;
-    }
+    } */
     return (
     <MuiThemeProvider>
     <div className="App">     
