@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'; 
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import styled from 'styled-components';
-import './Constants/url.js';
-//import {Redirect} from 'react-router-dom';
+import '../Constants/url.js';
+import {Redirect,Router,Route} from 'react-router-dom';
+import Dashboard from './Dashboard.js';
 
 const Alignstyle = styled.div`
  text-align: center;
 `;
 
-class App extends Component {
+class LoginComponent extends Component {
   constructor(props) {
     super(props);    
     this.state = {
@@ -23,10 +24,10 @@ class App extends Component {
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleSubmit=this.handleSubmit.bind(this);
   };
-  render() {
-    /* if(this.state.authSuccess){
-      return <Redirect to='/dashboard' />;
-    } */
+  render() {     
+    if(this.state.authSuccess){
+      return (<Redirect to ='/dashboard'/>);
+    }
     return (
     <MuiThemeProvider>
     <div className="App">     
@@ -68,7 +69,7 @@ class App extends Component {
         </Alignstyle>
       </div>
     </div>  
-    </div>
+    </div>    
     </MuiThemeProvider>
     );
   }
@@ -86,9 +87,11 @@ class App extends Component {
    }
    else{
     this.state.authSuccess=true;
+    window.location.href="#/dashboard";
    }
    event.preventDefault();
+   //this.props.history.location='/dashboard';
   }
 }
 
-export default App;
+export default LoginComponent;
