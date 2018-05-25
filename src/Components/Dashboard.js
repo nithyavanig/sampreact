@@ -17,7 +17,7 @@ class Dashboard extends Component{
     render(){
         return(
             <MuiThemeProvider>
-            <div>
+            <div className="Dashboard-body">
                 <label>Welcome</label>
             </div>
             </MuiThemeProvider>
