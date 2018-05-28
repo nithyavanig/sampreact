@@ -42,10 +42,15 @@
   to { transform: rotate(360deg); }
 }
 
+/*
 .Dashboard-body{
   margin: 0;
   padding: 0;
+  height:100%;
+  width: 100%;
   font-family: sans-serif;
   background: #e1e2e4;
 }
+*/
+
 

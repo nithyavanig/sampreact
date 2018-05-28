@@ -17,8 +17,32 @@ class Dashboard extends Component{
     render(){
         return(
             <MuiThemeProvider>
-            <div className="Dashboard-body">
-                <label>Welcome</label>
+            <div>
+            <Router>
+                <div>
+                <ul>
+                    <li>
+                    <Link to="/dashboard">Dashboard</Link>
+                    </li>
+                    <li>
+                    <Link to="/profile">Profile</Link>
+                    </li>
+                    <li>
+                    <Link to="/grades">Grades</Link>
+                    </li>
+                    <li>
+                    <Link to="/classes">Classes</Link>
+                    </li>
+                    <li>
+                    <Link to="/">Logout</Link>
+                    </li>
+                </ul>
+                <hr />
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/topics" component={Topics} />
+                </div>  
+            </Router>
             </div>
             </MuiThemeProvider>
         );
